@@ -1,0 +1,71 @@
+<?php
+$fp=fopen("myFile.dat","r");
+$s=stat("myFile.dat");
+echo "The Size of myFile.dat is $s[7] bytes";
+$r=fread($fp,$s[7]);
+echo "<br>File content : ";
+echo "<br>$r";
+
+fclose($fp);
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Bill</title>
+</head>
+<body>
+    <h1>Item Bill</h1>
+    <table border="1">
+        <tr>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Units Sold</th>
+            <th>Rate</th>
+            <th>Total</th>
+        </tr>
+
+        <?php
+        // Read the "item.dat" file
+        $lines = file("item.dat");
+
+        // Initialize the total bill
+        $totalBill = 0;
+
+        // Loop through each line in the file
+        foreach ($lines as $line) {
+            // Split the line into an array based on comma (assuming CSV format)
+            $itemDetails = explode(",", $line);
+
+            // Extract item details
+            $itemCode = trim($itemDetails[0]);
+            $itemName = trim($itemDetails[1]);
+            $unitsSold = trim($itemDetails[2]);
+            $rate = trim($itemDetails[3]);
+
+            // Calculate the total for this item
+            $totalItem = $unitsSold * $rate;
+
+            // Add this item to the table
+            echo "<tr>";
+            echo "<td>$itemCode</td>";
+            echo "<td>$itemName</td>";
+            echo "<td>$unitsSold</td>";
+            echo "<td>$rate</td>";
+            echo "<td>$totalItem</td>";
+            echo "</tr>";
+
+            // Add to the total bill
+            $totalBill += $totalItem;
+        }
+        ?>
+
+        <tr>
+            <td colspan="4">Total Bill</td>
+            <td><?php echo $totalBill; ?></td>
+        </tr>
+    </table>
+</body>
+</html>
