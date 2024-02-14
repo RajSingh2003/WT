@@ -1,0 +1,204 @@
+seta1
+
+<!-- <html>
+<head>
+<title>exams</title>
+</head>
+<body>
+<script>
+var str="exam are near, have you started preparing for?";
+var st=alert(str);
+var im=prompt("exam are near, have you started preparing for?");
+var cn=confirm("exam are near, have you started preparing for?");
+if(cn){
+    alert("very good"+im);
+      }
+else {
+       alert("start preparing its never too late");
+     }
+       
+</script>
+</body>
+</html> -->
+<html>
+<body>
+<input type = button value = alert onclick = "Alert()">
+<input type = button value = prompt onclick = "Prompt()">
+<input type = button value = confirm  onclick = "Confirm()">
+
+<script>
+function Alert() {
+alert("Exam are near, have you start preparing ?");
+
+}
+
+function Prompt() {
+var ans = prompt("Have you started prepartion ?", "yes");
+if(ans === "yes")
+alert("Good Student");
+else
+alert("Bad Student");
+}
+
+function Confirm(){
+var chk = confirm("Are you ready for exam? ");
+if(chk == true)
+alert("All the best");
+else
+alert("Then start studing");
+}
+</script>
+</body>
+</html>
+
+set a2
+
+<!-- <html>
+<head>
+<script src="http://192.168.1.254/js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+$("#np").append('<li>three</li>');
+});
+</script>
+</head>
+<body>
+   <h1>Demo: jequery append</h1>
+   <ol id="np">
+    <li>one</li>
+    <li>two</li>
+    </ol>
+</body>
+</html>    -->
+<!-- <!DOCTYPE HTML>
+ <html>
+   <head>
+     <script src="http://192.168.1.254/jquery/jquery.js"></script>
+     <script>
+       $(document).ready(function(){
+           $("#btn1").click(function(){
+            $("p").append("<b>Append Text</b>.");
+              });
+        $("#btn2").click(function(){
+            $("ol").append("<li>After Text</li>");
+          });
+       });
+   </script>
+  </head>
+ <body>
+   <p>This is a paragraph for trial.</p>
+<ol>
+<li>List Item1 </li>
+<li>List Item2 </li>
+<li>List Item3 </li>
+<li>List Item4 </li>
+</ol>
+    <button id="btn1">append text</button>
+     <button id="btn2">append list item</button>     
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<head>
+  <title>Append Text in HTML</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <p id="myParagraph">This is an existing paragraph.</p>
+
+  <ol id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ol>
+  <script>
+    // Append text to the paragraph
+    $('#myParagraph').append(' Appended text to the paragraph.');
+
+    // Append text to the ordered list
+    $('#myList').append('<li>Item 3</li>');
+  </script>
+</body>
+</html>
+
+
+setb1
+
+<html>
+<body>
+<p> Enter your userId and Password </p>
+<input type = "text" name = "userId" id = "Id" >
+<input type = "password" name = "Pass" id = "pass" >
+
+<script type = "text/javascript">
+
+function Fun() {
+var userid = document.getElementById("Id").value;
+var pass = document.getElementById("pass").value;
+
+if(userid === "RajNoob" && pass === "admin2")
+alert("Correct UserId and Password");
+else
+alert("Wrong Password");
+}
+</script>
+<button onclick = "Fun()"> check id and password </button>
+</body>
+</html>
+
+
+setb2
+
+
+ <!DOCTYPE HTML>
+ <html>
+   <head>
+     <script src="http://192.168.1.254/jquery/jquery.js"></script>
+     <script>
+       $(document).ready(function(){
+           $("#btn1").click(function(){
+            $("p").before("<b>Before Text</b>.");
+              });
+        $("#btn2").click(function(){
+            $("p").after("<i>After Text</i>");
+          });
+       });
+   </script>
+  </head>
+ <body>
+   <p>This is a paragraph for trial.Text will be inserted....
+      Before and After this!!!!  </p>
+      <img id="p" src="contact.webp"> 
+    <button id="btn1">Insert Before</button>
+     <button id="btn2">Insert After</button>     
+  </body>
+</html> 
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert Text Around Image</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <img id="myImage" src="contact.webp" alt="Your Image">
+
+  <script>
+    // Insert text before the image
+    $('#myImage').before('<p>This is before the image.</p>');
+
+    // Insert text after the image
+    $('#myImage').after('<p>This is after the image.</p>');
+  </script>
+
+</body>
+</html> -->
+
+
+
+
