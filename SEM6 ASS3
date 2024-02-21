@@ -201,4 +201,114 @@ setb2
 
 
 
+ass 4
 
+
+ass 1
+
+<html>
+<body>
+<script>
+function display(){
+var x = new XMLHttpRequest();
+var name = document.getElementById('user').value;
+x.open("GET","app.php?name="+name,true);
+x.send();
+x.onreadystatechange = function()
+{
+if(x.readyState == 4 && x.status == 200){
+document.getElementById('show').innerHTML = x.responseText;
+
+}
+}
+}</script>
+<input type=text" id = "user" name= "name"><br>
+<button onclick = "display()"> submit</button>
+<p id = "show"></p>
+</body>
+</html>
+
+
+
+
+
+
+<?php 
+
+$name = $_GET['name'];
+if($name == "")
+    echo "Enter name valid name";
+else if($name=='ro' || $name == 'Virat')
+{
+    echo "Hello ".$name;
+}else{
+echo "Stranger not found";
+}
+?>
+
+
+
+ass2 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Viewer</title>
+</head>
+<body>
+    <button onclick="fetchContacts()">Print Contacts</button>
+    <div id="contactTable"></div>
+
+    <script>
+        function fetchContacts() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("contactTable").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "a1.php", true);
+            xmlhttp.send();
+        }
+    </script>
+</body>
+</html>
+
+
+
+<?php
+$filename = "cont.dat";
+
+if (file_exists($filename)) {
+    $contacts = file($filename, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+    echo "<table border='1'>
+            <tr>
+                <th>Sr No</th>
+                <th>Name</th>
+                <th>Residence Number</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+            </tr>";
+
+    foreach ($contacts as $contact) {
+        $data = explode(',', $contact);
+        echo "<tr>
+                <td>{$data[0]}</td>
+                <td>{$data[1]}</td>
+                <td>{$data[2]}</td>
+                <td>{$data[3]}</td>
+                <td>{$data[4]}</td>
+              </tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "Contact file not found.";
+}
+?>
+
+
+1,raj,2342345677,222222,ram
+2,raj,2342345677,222222,ram
